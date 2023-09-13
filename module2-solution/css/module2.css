@@ -1,0 +1,166 @@
+/* CSS for Module 2 Assignment */
+/********** Base styles **********/
+* {
+  box-sizing: border-box;
+  font-family: "Helvetica", "Verdana", "Arial";
+  margin: 0;
+}
+
+div.content-wrapper {
+  position: relative;
+  background-color: #999999;
+  border: 1px solid black;
+  overflow-y: hidden;
+  margin: 15px;
+  height: 200px;
+}
+
+div.content-wrapper:hover {
+  overflow-y: auto;
+  cursor: ns-resize;
+}
+
+div.title-wrapper {
+  padding-bottom: 2.5em;
+}
+
+p {
+  color: black;
+  position: relative;
+  padding: 0px 25px 25px 25px;
+}
+
+h1 {
+  margin-bottom: 15px;
+  margin-top: 15px;
+  text-align: center;
+}
+
+h2.title {
+  color: black;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  padding: 0px 40px 0px 40px;
+}
+
+h1#normal-title {
+  display: block;
+}
+
+h2#mobile-title {
+  display: none;
+  font-family: "Times New Roman", Times, serif;
+}
+
+h2#chicken-title-short {
+  background-color: #d59898;
+  display: block;
+}
+
+h2#beef-title-short {
+  background-color: #c14543;
+  display: block;
+  color: white;
+}
+
+h2#sushi-title-short {
+  background-color: #e5d198;
+  display: block;
+}
+
+h2#chicken-title-long {
+  background-color: #d59898;
+  display: none;
+}
+
+h2#beef-title-long {
+  background-color: #c14543;
+  display: none;
+  color: white;
+}
+
+h2#sushi-title-long {
+  background-color: #e5d198;
+  display: none;
+}
+
+/* Simple Responsive Framework from lecture 24*/
+.row {
+  width: 100%;
+}
+
+/********** Desktop view **********/
+@media (min-width: 992px) {
+  .col-lg-4 {
+    float: left;
+    width: 33.33%;
+  }
+}
+
+/********** Tablet view **********/
+@media (min-width: 768px) and (max-width: 991px) {
+  .col-md-6 {
+    float: left;
+    width: 50%;
+  }
+  .col-md-12 {
+    float: left;
+    width: 100%;
+  }
+}
+
+/********** Mobile view **********/
+@media (max-width: 767px) {
+  .col-sm-12 {
+    float: left;
+    width: 100%;
+  }
+
+  h2.title {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid black;
+    border-left: none;
+    position: relative;
+  }
+
+  div.title-wrapper {
+    padding-bottom: 15px;
+  }
+
+  h2#chicken-title-long {
+    display: block;
+  }
+
+  h2#chicken-title-short {
+    display: none;
+  }
+
+  h2#beef-title-long {
+    display: block;
+  }
+
+  h2#beef-title-short {
+    display: none;
+  }
+
+  h2#sushi-title-long {
+    display: block;
+  }
+
+  h2#sushi-title-short {
+    display: none;
+  }
+
+  h1#normal-title {
+    display: none;
+  }
+
+  h2#mobile-title {
+    display: block;
+    padding-left: 15px;
+  }
+}
