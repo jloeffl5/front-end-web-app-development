@@ -1,140 +1,107 @@
 /* CSS for Module 3 Assignment */
 /********** Base styles **********/
 * {
-    box-sizing: border-box;
-    font-family: 'Oxygen', serif;
-    margin: 0;
-  }
-  
-  body {
-    font-size: 16px;
-    color: black;
-  }
-  
-  /** HEADER **/
-  #header-nav {
-    background-color: #999999;
-    border-radius: 0;
-    border: 0;
-  }
-  
-  .navbar-brand h1 {
-    color: black;
-    font-size: 1.5em;
-    font-weight: bold;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-  
-  .navbar-nav {
-    margin: 0px 0px !important;
-  }
+  box-sizing: border-box;
+  font-family: "Oxygen", serif;
+  margin: 0;
+}
 
-  #collapsable-nav {
-    padding-left: 0px !important;
-    padding-right: 0px !important;
-    background-color: rgb(111, 123, 179) !important;
-    color: white;
-  }
+body {
+  font-size: 16px;
+  color: black;
+}
 
-  #nav-list {
-    margin-top: 10px;
-  }
-  #nav-list a {
-    color: black;
-    text-align: center;
-  }
-  #nav-list a:hover {
-    background: #E7E7E7;
-  }
-  #nav-list a span {
-    font-size: 1.8em;
-  }
-  
-  .navbar-header button.navbar-toggle, .navbar-header .icon-bar {
-    border: 1px solid black;
-  }
-  .navbar-header button.navbar-toggle {
-    clear: both;
-    margin-top: -55px;
-  }
+#menu-heading {
+  font-size: 2em;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
 
-  .navbar-header h1 {
-    padding-left: 20px;
-    padding-bottom: 10px;
-  }
-  /* END HEADER */
-  
-  div.content-wrapper {
-    position: relative;
-    background-color: #999999;
-    border: 1px solid black;
-    margin: 15px;
-  }
-  
-  div.title-wrapper {
-    padding-bottom: 2.5em;
-  }
-  
-  p {
-    color: black;
-    padding: 0px 25px 5px 25px;
-  }
-  
-  body > h1 {
-    margin-bottom: 15px;
-    margin-top: 15px;
-    text-align: center;
-  }
+h1, h3 {
+  font-weight: bold;
+}
 
-  /********** Large devices only **********/
-  @media (min-width: 992px) {
-    #collapsable-nav { /* Collapsed nav menu text */
-        display: none !important;
-      }
-  }
-  
-  /********** Medium devices only **********/
-  @media (min-width: 768px) and (max-width: 991px) {
-    /* Header */
-    #collapsable-nav { /* Collapsed nav menu text */
-        display: none !important;
-      }
+div.content-wrapper {
+  position: relative;
+  background-color: #999999;
+  border: 1px solid black;
+  margin: 15px;
+}
 
-    /* End Header */
-  }
-  
-  ul#nav-list li {
-    border: 1px solid black;
-    font-weight: bold;
-  }
+div.title-wrapper {
+  padding-bottom: 2.5em;
+}
 
-  #collapsable-nav {
-    background-color: white;
-  }
-  .navbar-header {
-    width: 100%;
-    border-top: 2px solid black;
-    border-bottom: 2px solid black;
-  }
-  /********** Extra small devices only **********/
-  @media (max-width: 767px) {
-    /* Header */
-    .navbar-brand {
-      padding-top: 10px;
-      height: 80px;
-    }
-    .navbar-brand h1 { /* Restaurant name */
-      padding-top: 10px;
-      font-size: 5vw; /* 1vw = 1% of viewport width */
-    }
-  
-    #collapsable-nav a { /* Collapsed nav menu text */
-      font-size: 1.2em;
-    }
-    #collapsable-nav a span { /* Collapsed nav menu glyph */
-      font-size: 1em;
-      margin-right: 5px;
-    }
-    /* End Header */
-  }  
+p {
+  color: black;
+  padding: 0px 25px 5px 25px;
+}
+
+/** HEADER **/
+#header-nav {
+  background-color: #999999;
+  border-radius: 0;
+  border: 0;
+}
+
+.navbar-default .navbar-brand {
+  color: black;
+  font-size: 2em;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 30px;
+  height: 80px;
+}
+
+.navbar-default:hover .navbar-brand:hover {
+  color: #e7e7e7;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.navbar-nav {
+  margin: 0;
+  padding: 0;
+}
+
+#nav-list a {
+  color: black;
+  background-color: #6f7bb3;
+}
+
+#nav-list a:hover {
+  background-color: #e7e7e7;
+}
+
+.navbar-header {
+  width: 100%;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+.navbar-header button.navbar-toggle, .navbar-header .icon-bar {
+  border: 2px solid black;
+}
+
+.navbar-header button.navbar-toggle {
+  clear: both;
+  margin-top: -60px;
+}
+
+.navbar-header h1 {
+  padding-left: 40px;
+}
+
+ul#nav-list li {
+  border-bottom: 2px solid black;
+  font-weight: bold;
+}
+
+#collapsable-nav {
+  background-color: white;
+}
+
+#collapsable-nav a { /* Collapsed nav menu text */  
+  font-size: 1.2em;
+}
+/* END HEADER */
