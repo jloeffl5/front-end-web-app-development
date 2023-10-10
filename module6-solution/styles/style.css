@@ -1,0 +1,12 @@
+/* Additional CSS for Module 6 Assignment */
+.green-message {
+    border-style: solid;
+    border-color: green;
+    color: green;
+}
+
+.red-message {
+    border-style: solid;
+    border-color: red;
+    color: red;
+}
