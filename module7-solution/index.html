@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Shopping List Check Off</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles/bootstrap.min.css" />
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <style>
+      .emptyMessage {
+        font-weight: bold;
+        color: red;
+        font-size: 1.2em;
+      }
+      li {
+        margin-bottom: 7px;
+        font-size: 1.2em;
+      }
+      li > button {
+        margin-left: 6px;
+      }
+      button > span {
+        color: green;
+      }
+      input {
+        width: 70px;
+      }
+    </style>
+  </head>
+  <body ng-app="ShoppingListCheckOff">
+    <div class="container">
+      <h1>Shopping List Check Off</h1>
+
+      <div class="row">
+        <!-- To Buy List -->
+        <div ng-controller="ToBuyController as toBuyCtrl" class="col-md-6">
+          <h2>To Buy:</h2>
+          <ul>
+            <li ng-repeat="item in toBuyCtrl.items">
+              Buy {{ item.quantity }} {{ item.name }}
+              <input ng-model="item.quantity" type="number" min="1"></input>
+              <button ng-click="toBuyCtrl.buyItem($index, item.quantity, item.name, item.pricePerItem);" class="btn btn-default">
+                <span class="glyphicon glyphicon-ok"></span> Bought
+              </button>
+            </li>
+          </ul>
+          <div ng-if="toBuyCtrl.items.length == 0" class="emptyMessage">Everything is bought!</div>
+        </div>
+
+        <!-- Already Bought List -->
+        <div
+          ng-controller="AlreadyBoughtController as alreadyBoughtCtrl"
+          class="col-md-6"
+        >
+          <h2>Already Bought:</h2>
+          <ul>
+            <li ng-repeat="item in alreadyBoughtCtrl.items">
+              Bought {{ item.quantity }} {{ item.name }} for total price of {{ (item.quantity * item.pricePerItem) | currency : "$$$$$$" : 2 }}
+            </li>
+          </ul>
+          <div ng-if="alreadyBoughtCtrl.items.length == 0" class="emptyMessage">Nothing bought yet.</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
