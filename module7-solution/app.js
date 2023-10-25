@@ -5,7 +5,7 @@
     .controller('ToBuyController', ToBuyController)
     .controller('AlreadyBoughtController', AlreadyBoughtController)
     .service('ShoppingListCheckOffService', ShoppingListCheckOffService)
-    .filter('InAngularDollars', AngularDollarsFilter)
+    .filter('InAngularDollars', AngularDollarsFilter);
 
     ToBuyController.$inject = ['ShoppingListCheckOffService'];
     function ToBuyController(ShoppingListCheckOffService) {
