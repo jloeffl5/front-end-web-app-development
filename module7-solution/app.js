@@ -5,6 +5,7 @@
     .controller('ToBuyController', ToBuyController)
     .controller('AlreadyBoughtController', AlreadyBoughtController)
     .service('ShoppingListCheckOffService', ShoppingListCheckOffService)
+    .filter('InAngularDollars', AngularDollarsFilter)
 
     ToBuyController.$inject = ['ShoppingListCheckOffService'];
     function ToBuyController(ShoppingListCheckOffService) {
@@ -68,6 +69,16 @@
             };
             alreadyBoughtList.push(item);
         };     
+    }
+
+    function AngularDollarsFilter() {
+        return function (input) {
+            // Note: We are assuming that the input here is always a numeric value
+            // since we are dealing with fixed data
+            input = input || 0;
+            input = "$$$" + input.toFixed(2);
+            return input;
+        }
     }
 
     })();
