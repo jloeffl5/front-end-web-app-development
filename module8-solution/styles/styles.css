@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+h1 {
+  margin-bottom: 30px;
+}
+input[type="text"] {
+  width: 200px;
+}
+
+.center-block {
+  width: 50%;
+}
+
+found-items.div {
+  float: none;
+  display: block;
+  width: 100%;
+}
+
+.input-group {
+  text-align: center;
+}
+
+.input-group button {
+  margin-top: 15px;
+}
+
+.emptyMessage {
+  font-weight: bold;
+  color: red;
+  font-size: 1.2em;
+}
+
+.search-results {
+  margin-top: 25px;  
+}
+
+div.content-wrapper {
+  position: relative;
+  margin: 15px;
+  text-align: center;
+}

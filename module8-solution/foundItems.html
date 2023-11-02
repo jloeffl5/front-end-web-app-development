@@ -1,0 +1,21 @@
+<div class="row search-results">
+  <table class="table" ng-if="searchResults.foundItems != null && searchResults.foundItems.length > 0">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Short Name</th>
+        <th scope="col">Description</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="item in searchResults.foundItems">
+        <td>{{ item.name }}</td>
+        <td>{{ item.short_name }}</td>
+        <td>{{ item.description }}</td>
+        <td><button ng-click="searchResults.onRemove({index: $index});">Don't want this one!</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="text-center emptyMessage" ng-if="searchResults.foundItems != null && searchResults.foundItems.length == 0">Nothing found</p>
+</div>
