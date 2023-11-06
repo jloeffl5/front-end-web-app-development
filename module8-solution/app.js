@@ -68,7 +68,7 @@
                         var itemObject = response.data[categoryKey]["menu_items"][itemKey];
 
                         if (itemObject.description.includes(searchTerm)) {
-                            foundList.push({name: itemObject.name, short_name: itemObject.short_name, description: itemObject.description });
+                            foundList.push({ name: itemObject.name, short_name: itemObject.short_name, description: itemObject.description });
                         }
                     }
                 }
@@ -77,6 +77,5 @@
             });
         };    
     }
-
-    })();
+})();
     
