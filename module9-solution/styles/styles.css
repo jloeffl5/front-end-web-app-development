@@ -2,3 +2,13 @@
   box-sizing: border-box;
   margin: 0;
 }
+
+ul { 
+	display: inline-block; 
+	text-align: left;
+}
+
+li {
+  padding-bottom: 5px;
+  list-style: none;
+}

@@ -4,7 +4,7 @@
     angular.module('MenuApp')
     .controller('ItemsController', ItemsController);
     
-    // 'item' is injected through state's resolve
+    // 'items' is injected through state's resolve
     ItemsController.$inject = ['items', "categoryShortName"]
     function ItemsController(items, categoryShortName) {
       var itemCtrl = this;

@@ -1,7 +1,7 @@
 (function () {
     'use strict';
     
-    angular.module('menudata', ['data'])
+    angular.module('data', [])
     .service('MenuDataService', MenuDataService)
     .constant('ApiBasePath', "https://coursera-jhu-default-rtdb.firebaseio.com");
     
@@ -9,6 +9,7 @@
     function MenuDataService($http, ApiBasePath) {
         var service = this;
 
+        // Gets and returns all menu categories 
         service.getAllCategories = function () {
             return $http({
                 method: "GET",
@@ -18,6 +19,7 @@
             });
         };
         
+        // Gets and returns all menu items for the specified category
         service.getItemsForCategory = function (categoryShortName) {
             return $http({
                 method: "GET",
