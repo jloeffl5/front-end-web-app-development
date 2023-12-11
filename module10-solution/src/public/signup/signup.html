@@ -1,0 +1,67 @@
+<div id="main-content" class="container">
+    <div class="row">
+        <h1 class="text-center">Sign Up</h1>
+        <fieldset>
+            <legend>Registration</legend>
+            <form name='signupCtrl.signupForm' novalidate>
+              <label for="firstName">First Name:</label>
+              <input type="text" name="firstname" placeholder="First name"
+                ng-model="signupCtrl.user.firstname"
+                required
+                minlength="1">
+              <p class="text-center alert alert-danger"
+                ng-if="(signupCtrl.signupForm.firstname.$error.minlength || signupCtrl.signupForm.firstname.$error.required) && signupCtrl.signupForm.firstname.$touched">
+                First name must be at least 1 character in length
+              </p>
+              <br>
+
+              <label for="lastName">Last Name:</label>
+              <input type="text" name="lastname" placeholder="Last name"
+                ng-model="signupCtrl.user.lastname"
+                required
+                minlength="1">
+              <p class="text-center alert alert-danger" ng-if="(signupCtrl.signupForm.lastname.$error.minlength || signupCtrl.signupForm.lastname.$error.required) && signupCtrl.signupForm.lastname.$touched">
+                Last name must be at least 1 character in length
+              </p>
+              <br>
+
+              <label for="email">Email:</label>
+              <input type="email" name="email" placeholder="handle@domain"
+                ng-model="signupCtrl.user.email"
+                required>
+              <p class="text-center alert alert-danger" ng-if="signupCtrl.signupForm.email.$invalid && signupCtrl.signupForm.email.$touched">
+                Must be a valid email address following the format: handle@domain
+              </p>
+              <br>
+      
+              <label for="phone">Phone Number:</label>
+              <input type="text" name="phone" placeholder="###-###-####"
+                ng-model="signupCtrl.user.phone"
+                pattern="(\d{3})-(\d{3})-(\d{4})"
+                required>
+              <p class="text-center alert alert-danger" ng-if="signupCtrl.signupForm.phone.$invalid && signupCtrl.signupForm.phone.$touched">
+                Phone number must be in the format ###-###-####.
+              </p>
+              <br>
+
+              <label for="phone">Favorite Dish:</label>
+              <input type="text" name="favoriteDish" placeholder="Menu Number (ex. F2)"
+                ng-model="signupCtrl.user.favoriteDish"
+                required
+                pattern="([A-Z]+)([0-9]+)"
+                ng-blur="signupCtrl.validateMenuItem()">
+              <p class="text-center alert alert-danger" ng-if="signupCtrl.signupForm.favoriteDish.$invalid && signupCtrl.signupForm.favoriteDish.$touched">
+                No such menu number exists.
+              </p>
+              <br>             
+      
+              <button class="btn btn-primary" ng-disabled="signupCtrl.signupForm.$invalid" ng-click="signupCtrl.submit()">Submit</button>
+            </form>
+          </fieldset>
+      
+          <div class="text-center alert alert-success" id="formCompletionAlert" ng-if="signupCtrl.completed">
+            Your information has been saved.
+          </div>
+    </div>
+  </div>
+  

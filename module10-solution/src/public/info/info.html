@@ -1,0 +1,31 @@
+<div id="main-content" class="container">
+    <div class="row">
+        <h1 class="text-center">My Info</h1>
+        <div ng-if="infoCtrl.info == null" class="text-center alert alert-danger">
+            <p>Not Signed Up Yet. <a ui-sref="public.signup">Sign Up Now!</a></p>
+        </div>
+        <div ng-if="infoCtrl.info != null" class="text-center">
+            <p><strong>First Name:</strong> {{ infoCtrl.info.firstName }}</p>
+            <p><strong>Last Name:</strong> {{ infoCtrl.info.lastName }}</p>
+            <p><strong>Email:</strong> {{ infoCtrl.info.email }}</p>
+            <p><strong>Phone Number:</strong> {{ infoCtrl.info.phone }}</p>
+            <p ng-if="infoCtrl.info.favoriteDish == null"><strong>Favorite Dish:</strong> No such menu number exists</p>
+            <div ng-if="infoCtrl.info.favoriteDish != null">
+                <p><strong>Favorite Dish:</strong></p>
+                <div class="menu-item-tile col-md-12">
+                    <div class="menu-item-description col-sm-12">
+                        <div class="col-sm-12">
+                            <div class="info-menu-item-photo">
+                              <img class="img-responsive" width="250" height="150" ng-src="images/menu/{{infoCtrl.info.favoriteDish.category}}/{{infoCtrl.info.favoriteDish.short_name}}.jpg" alt="{{infoCtrl.info.favoriteDish.name}}">
+                            </div>
+                          </div>
+                        <p>{{infoCtrl.info.favoriteDish.name}}</p>
+                        <p>Description: {{infoCtrl.info.favoriteDish.description}}</p>
+                    </div>
+                </div>
+                  
+            </div>
+        </div>        
+    </div>
+  </div>
+  
